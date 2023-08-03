@@ -10,8 +10,6 @@ import { UpdateContactDto } from "../dtos/update-contact.dto";
 export abstract class ContactRepository {
   abstract create(data: CreateContactDto, userId: string): Promise<Contact> ;
   abstract findOne(id: string): Promise<Contact[]>;
-  // abstract findAll(): Promise<Contact[]>;
-  // abstract findByEmail(email: string): Promise<Contact>;
   abstract update(id: string, data: UpdateContactDto): Promise<Contact>;
   abstract delete(id: string): Promise<void>;
 

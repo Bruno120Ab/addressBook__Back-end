@@ -15,11 +15,8 @@ export class AuthService {
     const user = await this.userService.findByEmail(userEmail);
     if (user) {
       const passwordMatch = await compare(userPassword, user.password);
-      console.log(user.password, userPassword, passwordMatch);
 
       if (passwordMatch) {
-        console.log(user.password, userPassword);
-
         return { email: user.email };
       }
     }
@@ -30,12 +27,6 @@ export class AuthService {
   async login(email: string, password: string) {
     const user = await this.userService.findByEmail(email);
     const validatedUser = await this.userService.findByEmail(email);
-      // if (validatedUser) {
-      //   const passwordMatch = await compare(userPassword, user.password);
-      //   if (passwordMatch) {
-      //     return { email: user.email };
-      //   }
-      // }
       
       if( validatedUser.password !== password || !validatedUser) throw new NotFoundException('User not found');
 
