@@ -26,9 +26,10 @@ Navegue para o diretório da aplicação que acabou de ser clonado e rode este c
 
 
 
-## Passo 3: Configurar o banco de dados
+## Passo 3: Configurar o banco de dados e gerar migrações
 
-Se a aplicação Nest utilizar um banco de dados, é necessário configurá-lo antes de iniciar a aplicação. Configuro o banco de dados no .evn .
+Se a aplicação Nest utilizar um banco de dados, é necessário configurá-lo antes de iniciar a aplicação. Configuro o banco de dados em arquivo .env seguindo o exemplo dado no .envexample. E para gerar as migrações rode este comando em seu terminal
+<code>npx prisma migrate dev</code>
 
 ## Passo 4: Iniciar a aplicação
 
